@@ -4,9 +4,9 @@ let env = {
 	PORT: 3000,
 	DBPROTOCOL: 'mongodb',
 	DBUSERNAME: 'admin',
-	DBPASSWORD: 'test',
-	DBHOST: 'ds050189.mlab.com:50189',
-	DBNAME: 'vue-kanban-kk-do',
+	DBPASSWORD: 'd123456',
+	DBHOST: 'ds041157.mlab.com:41157',
+	DBNAME: 'fampotluck',
 	SERVERNAME: 'dev-server'
 }
 
@@ -21,3 +21,4 @@ env.CONNECTIONSTRING = `${env.DBPROTOCOL}://${env.DBUSERNAME}:${env.DBPASSWORD}@
 process.env.CONNECTIONSTRING = env.CONNECTIONSTRING
 
 exports = env
+
