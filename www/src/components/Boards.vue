@@ -11,7 +11,9 @@
               <input name="description" type="text" class="form-control" placeholder="Description" v-model="newBoard.description">
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-default navbar-btn">Create Board</button>
+                <router-link to="PartyCreate">
+                    <button type="submit" class="btn btn-default navbar-btn">Create a Party</button>
+                  </router-link>
             </div>
           </form>
         </div>
@@ -19,7 +21,7 @@
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <h2>My Boards</h2>
+        <h2>My Parties</h2>
         <div class="row board-wrapper">
           <div class="col-xs-12 board-link" v-for="board in boards">
             <router-link :to="'/boards/'+board._id" class="linked-text">
@@ -33,7 +35,7 @@
 
       </div>
       <div class="col-xs-6">
-        <h2>Preview Board</h2>
+        <h2>Preview Party</h2>
         <div class="board-wrapper" v-if="activeBoard.hasOwnProperty('name')">
           <h3>{{activeBoard.name}}</h3>
           <h5>Lists: {{lists.length}}</h5>
@@ -42,7 +44,7 @@
           </h5>
         </div>
         <div v-else>
-          <p>Mouse over a board to preview.</p>
+          <p>Mouse over a party to preview.</p>
         </div>
       </div>
 
