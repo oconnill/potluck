@@ -29,6 +29,7 @@
       }
     }
   }
+  import 'styles/partials/home.scss'
 </script>
 
 <style>
