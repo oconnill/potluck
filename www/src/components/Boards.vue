@@ -15,10 +15,10 @@
       <div class="col-xs-6">
         <h2>My Parties</h2>
         <div class="row board-wrapper">
-          <div class="col-xs-12 board-link" v-for="board in boards">
-            <router-link :to="'/boards/'+board._id" class="linked-text">
+          <div class="col-xs-12 board-link" v-for="party in parties">
+            <router-link :to="'/parties/'+party._id" class="linked-text">
               <h4>
-                <span v-on:mouseover="getBoard(board._id)" @click="getBoard(board._id)">{{board.name}}</span>
+                <span v-on:mouseover="getBoard(board._id)" @click="getBoard(board._id)">{{party.name}}</span>
               </h4>
             </router-link>
             <span class="glyphicon glyphicon-remove" @click="removeBoard(board)"></span>
@@ -56,7 +56,7 @@
       }
     },
     mounted() {
-      this.$store.dispatch('getBoards')
+      this.$store.dispatch('getParties')
     },
     computed: {
       boards() {

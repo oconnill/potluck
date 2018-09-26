@@ -43,9 +43,8 @@
       }
     },
     mounted() {
-      this.$store.dispatch('getBoards')
-      this.$store.dispatch('getDisabledDates')
-      },
+      this.$store.dispatch('getBoards');
+      this.$store.dispatch('getDisabledDates');
     },
     computed: {
       boards() {
