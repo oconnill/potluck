@@ -123,7 +123,7 @@ var store = new vuex.Store({
         });
     },
     getParties({ commit, dispatch }) {
-      api("parties") // api('boards')
+      api("userparties")
         .then(res => {
           commit("setParties", res.data.data);
         })

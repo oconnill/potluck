@@ -1,14 +1,14 @@
-let Boards = require('../models/board')
+let Parties = require('../models/party')
 
 module.exports = {
-  userBoards: {
-    path: '/userboards',
+  userParties: {
+    path: '/userparties',
     reqType: 'get',
     method(req, res, next){
-      let action = 'Find User Boards'
-      Boards.find({creatorId: req.session.uid})
-        .then(boards => {
-          res.send(handleResponse(action, boards))
+      let action = 'Find User Parties'
+      Parties.find({creatorId: req.session.uid})
+        .then(parties => {
+          res.send(handleResponse(action, parties))
         }).catch(error => {
           return next(handleResponse(action, null, error))
         })
