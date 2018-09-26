@@ -18,7 +18,7 @@
           <div class="col-xs-12 board-link" v-for="party in parties">
             <router-link :to="'/parties/'+party._id" class="linked-text">
               <h4>
-                <span v-on:mouseover="getBoard(board._id)" @click="getBoard(board._id)">{{party.name}}</span>
+                <span v-on:mouseover="getBoard(board._id)" @click="getBoard(board._id)">{{party.title}}</span>
               </h4>
             </router-link>
             <span class="glyphicon glyphicon-remove" @click="removeBoard(board)"></span>
@@ -52,7 +52,7 @@
     name: 'boards',
     data() {
       return {
-        newBoard: {}
+        newBoard: {},
       }
     },
     mounted() {
@@ -61,6 +61,9 @@
     computed: {
       boards() {
         return this.$store.state.boards
+      },
+      parties() {
+        return this.$store.state.parties
       },
       activeBoard() {
         return this.$store.state.activeBoard

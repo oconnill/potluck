@@ -43,6 +43,7 @@ var store = new vuex.Store({
       state.boards = data;
     },
     setParties(state, party) {
+      debugger
       state.parties = party;
     },
     handleError(state, err) {
@@ -122,7 +123,7 @@ var store = new vuex.Store({
         });
     },
     getParties({ commit, dispatch }) {
-      api("userparties") // api('boards')
+      api("parties") // api('boards')
         .then(res => {
           commit("setParties", res.data.data);
         })
