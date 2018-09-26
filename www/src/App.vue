@@ -13,7 +13,7 @@
 
 <script>
 
-  import 'styles/partials/home.scss'
+  import 'styles/main.scss'
 
   export default {
     name: 'app',

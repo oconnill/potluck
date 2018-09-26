@@ -12,6 +12,10 @@ const models = {
     endpoint: 'boards',
     useCustomRoutes: true
   },
+  party: {
+    name: 'Party',
+    endpoint: 'parties'
+  },
   list: {
     name: 'List',
     endpoint: 'lists'

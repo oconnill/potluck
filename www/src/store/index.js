@@ -114,8 +114,8 @@ var store = new vuex.Store({
           //commit('handleError', err)
         })
     },
-    getBoards({ commit, dispatch }) {
-      api('userboards') // api('boards')
+    getParties({ commit, dispatch }) {
+      api('userparties') // api('boards')
         .then(res => {
           commit('setBoards', res.data.data)
         })
@@ -135,12 +135,12 @@ var store = new vuex.Store({
           commit('handleError', err)
         })
     },
-    createBoard({ commit, dispatch }, board) {
-      //debugger
-      api.post('boards/', board)
+    createParty({ commit, dispatch }, party) {
+      debugger
+      api.post('parties/', party)
         .then(res => {
-          console.log('res to create board: ', res)
-          dispatch('getBoards')
+          console.log('res to create party: ', res)
+          dispatch('getParties')
         })
         .catch(err => {
           commit('handleError', err)
@@ -149,7 +149,7 @@ var store = new vuex.Store({
     removeBoard({ commit, dispatch }, board) {
       api.delete('boards/' + board._id)
         .then(res => {
-          
+
           dispatch('getBoards')
 
         })

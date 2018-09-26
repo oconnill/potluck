@@ -3,19 +3,11 @@
     <div class="row">
       <div class="col-xs-offset-3 col-xs-6">
         <div class="add-board-form">
-          <form type="submit" @submit.prevent="createBoard">
             <div class="form-group">
-              <input name="name" type="text" class="form-control" placeholder="Name" v-model="newBoard.name">
+              <router-link to="PartyCreate">
+                <button type="submit" class="btn btn-default navbar-btn">Create a Party</button>
+              </router-link>
             </div>
-            <div class="form-group">
-              <input name="description" type="text" class="form-control" placeholder="Description" v-model="newBoard.description">
-            </div>
-            <div class="form-group">
-                <router-link to="PartyCreate">
-                    <button type="submit" class="btn btn-default navbar-btn">Create a Party</button>
-                  </router-link>
-            </div>
-          </form>
         </div>
       </div>
     </div>
@@ -39,7 +31,8 @@
         <div class="board-wrapper" v-if="activeBoard.hasOwnProperty('name')">
           <h3>{{activeBoard.name}}</h3>
           <h5>Lists: {{lists.length}}</h5>
-          <h5>Created: {{new Date(Number(activeBoard.created)).getMonth() + 1}}/{{new Date(Number(activeBoard.created)).getDate()}}/{{new
+          <h5>Created: {{new Date(Number(activeBoard.created)).getMonth() + 1}}/{{new
+            Date(Number(activeBoard.created)).getDate()}}/{{new
             Date(Number(activeBoard.created)).getFullYear()}}
           </h5>
         </div>
@@ -54,6 +47,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'boards',
     data() {
@@ -76,10 +70,6 @@
       },
     },
     methods: {
-      createBoard() {
-        this.$store.dispatch('createBoard', this.newBoard)
-        this.newBoard = {};
-      },
       removeBoard(board) {
         this.$store.dispatch('removeBoard', board)
       },
@@ -96,10 +86,12 @@
     font-size: 1.8em;
     color: #D66D40
   }
+
   .board-wrapper {
-font-family: 'Roboto', sans-serif;
-color: #CCD1B3;
+    font-family: 'Roboto', sans-serif;
+    color: #CCD1B3;
   }
+
   .board-link {
     margin: 20px 0;
   }
