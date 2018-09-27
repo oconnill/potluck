@@ -38,10 +38,7 @@
           date: new Date(),
         },
         disabledDates: {
-          daysOfMonth: [
-            // this.parties.date_time
-            // .getDay()
-          ]
+          daysOfMonth: []
         }
       }
     },
@@ -69,7 +66,7 @@
         this.newBoard = {};
       },
       createParty() {
-        this.newParty.date = this.newParty.date.getDay();
+        this.newParty.date = this.newParty.date.getDate()
         this.$store.dispatch('createParty', this.newParty)
         this.newParty = {};
       },
@@ -81,13 +78,11 @@
         this.$store.dispatch('getBoard', id)
       },
       getDisabledDates() {
-        console.log(this.parties)
         for (var i = 0; i < this.parties.length; i++) {
-          let partyDate = this.parties[i]['date_time'];
+          let partyDate = this.parties[i]['date'];
           if (partyDate >= 1) {
-            console.log(partyDate.getDay());
+            this.disabledDates.daysOfMonth.push(partyDate);
           }
-          console.log(this.parties[i]['date_time']);
         }
       }
     }

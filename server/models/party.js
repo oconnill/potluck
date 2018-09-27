@@ -7,7 +7,7 @@ let ObjectId = mongoose.Schema.ObjectId
 
 var schema = new mongoose.Schema({
   title: { type: String, required: true },
-  date: { type: Number },
+  date: { type: Object },
   description: { type: String },
   created: { type: Number, default: Date.now() },
   creatorId: {type: ObjectId, ref: models.user.name, required: true},
