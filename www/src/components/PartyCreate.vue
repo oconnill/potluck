@@ -46,8 +46,8 @@
       }
     },
     mounted() {
-    this.$store.dispatch('getParties');
-    this.getDisabledDates();
+      this.$store.dispatch('getParties');
+      this.getDisabledDates();
     },
     computed: {
       boards() {
@@ -69,7 +69,7 @@
         this.newBoard = {};
       },
       createParty() {
-        console.log(this.newParty.date);
+        this.newParty.date = this.newParty.date.getDay();
         this.$store.dispatch('createParty', this.newParty)
         this.newParty = {};
       },
@@ -82,9 +82,9 @@
       },
       getDisabledDates() {
         console.log(this.parties)
-        for(var i = 0; i < this.parties.length; i++){
+        for (var i = 0; i < this.parties.length; i++) {
           let partyDate = this.parties[i]['date_time'];
-          if(partyDate >= 1){
+          if (partyDate >= 1) {
             console.log(partyDate.getDay());
           }
           console.log(this.parties[i]['date_time']);

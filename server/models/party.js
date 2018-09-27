@@ -7,9 +7,8 @@ let ObjectId = mongoose.Schema.ObjectId
 
 var schema = new mongoose.Schema({
   title: { type: String, required: true },
-  date_time: { type: String},
+  date: { type: Number },
   description: { type: String },
-  location: { type: String },
   created: { type: Number, default: Date.now() },
   creatorId: {type: ObjectId, ref: models.user.name, required: true},
   collaborators: [{type: ObjectId, ref: models.user.name}]
