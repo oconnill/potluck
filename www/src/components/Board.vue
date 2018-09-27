@@ -25,7 +25,6 @@
       </div>
     </div>
     <div class="row lists-row">
-
       <div class="col-xs-4 list" v-for="list in lists">
         <span class="glyphicon glyphicon-remove-circle pull-right" @click="removeList(list)"></span>
         <list :name="list.name" :description="list.description" :listId="list._id" :boardId="board._id"></list>

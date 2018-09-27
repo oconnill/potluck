@@ -56,7 +56,7 @@
       }
     },
     mounted() {
-      this.$store.dispatch('getParties')
+      this.$store.dispatch('getParties');
     },
     computed: {
       boards() {

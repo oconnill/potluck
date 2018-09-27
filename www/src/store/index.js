@@ -43,7 +43,6 @@ var store = new vuex.Store({
       state.boards = data;
     },
     setParties(state, party) {
-      debugger
       state.parties = party;
     },
     handleError(state, err) {
