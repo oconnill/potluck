@@ -173,6 +173,16 @@ var store = new vuex.Store({
           commit("handleError", err);
         });
     },
+    removeParty({ commit, dispatch }, party) {
+      api
+        .delete("parties/" + party._id)
+        .then(res => {
+          dispatch("getParties");
+        })
+        .catch(err => {
+          commit("handleError", err);
+        });
+    },
     /*
     removeBoard({ commit, dispatch }, board) {
       api.delete('boards/' + board._id)

@@ -21,7 +21,7 @@
                 <span v-on:mouseover="getBoard(board._id)" @click="getBoard(board._id)">{{party.title}}</span>
               </h4>
             </router-link>
-            <span class="glyphicon glyphicon-remove" @click="removeBoard(board)"></span>
+            <span class="glyphicon glyphicon-remove" @click="removeParty(party)"></span>
           </div>
         </div>
 
@@ -73,8 +73,8 @@
       },
     },
     methods: {
-      removeBoard(board) {
-        this.$store.dispatch('removeBoard', board)
+      removeParty(party) {
+        this.$store.dispatch('removeParty', party)
       },
       getBoard(id) {
         console.log('get board in compnent')
